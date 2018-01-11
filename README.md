@@ -3,4 +3,12 @@ This repository consists of codes of the subject Computer Programming <i>(ComPro
 
 _____
 
-By: Teerapat Kraisrisirikul
+<b>Instructions:</b>
+<ul>
+  <li>Only for viewing and studying.</li>
+  <li>Do not copy the whole algorithm for submitting.</li>
+</ul>
+
+_____
+
+<b>By:</b> Teerapat Kraisrisirikul <i>(Saint)</i>
