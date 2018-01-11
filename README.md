@@ -11,4 +11,4 @@ _____
 
 _____
 
-<b>By:</b> Teerapat Kraisrisirikul <i>(Saint)</i>
+<i>By Teerapat Kraisrisirikul (Saint)</i>
