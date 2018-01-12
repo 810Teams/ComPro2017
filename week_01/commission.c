@@ -13,13 +13,13 @@ int main () {
     scanf("%i", &amount);
 
     if (amount < 15) {
-        pay = amount * 160;
-    }
-    else if (amount == 15) {
         pay = amount * 240;
     }
+    else if (amount == 15) {
+        pay = amount * 360;
+    }
     else {
-        pay = amount * 320;
+        pay = amount * 480;
     }
 
     printf("%i\n", pay);

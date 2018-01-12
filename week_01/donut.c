@@ -4,7 +4,7 @@ Teerapat Kraisrisirikul (60070183)
 */
 
 #include <stdio.h>
-#define pi 3.1416
+#define pi 3.14159
 
 float cal_area(int diameter), cal_circ(int diameter);
 
