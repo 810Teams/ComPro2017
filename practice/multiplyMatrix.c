@@ -39,12 +39,6 @@ int main() {
     for (int i = 0; i < p; i++) {
         for (int j = 0; j < r; j++) {
             matrix_result[i][j] = multiply(*matrix_a, *matrix_b, p, q, i, j);
-        }
-    }
-
-    // Show matrix
-    for (int i = 0; i < p; i++) {
-        for (int j = 0; j < r; j++) {
             printf("%.2f ", matrix_result[i][j]);
         }
         printf("\n");
