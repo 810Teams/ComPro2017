@@ -5,7 +5,7 @@ Teerapat Kraisrisirikul
 
 #include <stdio.h>
 
-float multiply(float *matrix_a, float *matrix_b, int size_i, int size_j, int select_i, int select_j);
+float multiply(float *matrix_a, float *matrix_b, int p, int q, int r, int select_i, int select_j);
 
 int main() {
     /* Main function */
@@ -38,7 +38,7 @@ int main() {
     // Calculate result matrix
     for (int i = 0; i < p; i++) {
         for (int j = 0; j < r; j++) {
-            matrix_result[i][j] = multiply(*matrix_a, *matrix_b, p, q, i, j);
+            matrix_result[i][j] = multiply(*matrix_a, *matrix_b, p, q, r, i, j);
             printf("%.2f ", matrix_result[i][j]);
         }
         printf("\n");
@@ -47,29 +47,13 @@ int main() {
     return 0;
 }
 
-float multiply(float *matrix_a, float *matrix_b, int size_i, int size_j, int select_i, int select_j) {
+float multiply(float *matrix_a, float *matrix_b, int p, int q, int r, int select_i, int select_j) {
     /* Multiply matrice a's row with matrice b's column */
-    float row[size_i], column[size_i];
     float result = 0;
-    int count;
 
-    // Get selected row
-    count = 0;
-    for (int i = 0; i < size_j; i++) {
-        row[count] = matrix_a[i + select_i * size_j];
-        count++;
-    }
-
-    // Get selected column
-    count = 0;
-    for (int i = 0; i < size_j; i++) {
-        column[count] = matrix_b[i * size_i + select_j];
-        count++;
-    }
-
-    // Add up results
-    for (int i = 0; i < size_j; i++) {
-        result += row[i] * column[i];
+    // Calculate Result
+    for (int i = 0; i < q; i++) {
+        result += matrix_a[i + select_i * q] * matrix_b[i * r + select_j];
     }
 
     return result;

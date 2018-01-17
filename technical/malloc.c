@@ -1,14 +1,10 @@
 /*
-C Programming Practice - Testing File
+C Programming Practice - malloc()
 Teerapat Kraisrisirikul
 */
 
-// NOTE: This is just a testing file.
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <math.h>
 
 int main() {
     /* Main function */
