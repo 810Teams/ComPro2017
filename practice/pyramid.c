@@ -1,5 +1,5 @@
 /*
-C Programming Practice - Classic pyramid
+C Programming Practice - Pyramid
 Teerapat Kraisrisirikul
 */
 
