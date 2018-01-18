@@ -70,6 +70,7 @@ void displayContact(struct Contact data) {
 }
 
 struct Contact editName(struct Contact data) {
+    /* Function: Edit name */
     char new_firstname[31], new_lastname[31];
     printf("New Name: ");
     scanf(" %s %s", new_firstname, new_lastname);
@@ -79,6 +80,7 @@ struct Contact editName(struct Contact data) {
 }
 
 struct Contact editNickname(struct Contact data) {
+    /* Function: Edit nickname */
     printf("New Nickname: ");
     char new_nickname[11];
     scanf("%s", new_nickname);
@@ -87,6 +89,7 @@ struct Contact editNickname(struct Contact data) {
 }
 
 struct Contact editTel(struct Contact data) {
+    /* Function: Edit tel */
     printf("New Tel: ");
     char new_tel[11];
     scanf("%s", new_tel);
@@ -95,6 +98,7 @@ struct Contact editTel(struct Contact data) {
 }
 
 struct Contact editBirthday(struct Contact data) {
+    /* Function: Edit birthday */
     int new_day, new_month, new_year;
     printf("New Birthday: ");
     scanf("%i/%i/%i", &new_day, &new_month, &new_year);
