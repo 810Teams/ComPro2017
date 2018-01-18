@@ -1,5 +1,5 @@
 /*
-C Programming Practice - Struct Basic A
+C Programming Practice - Struct Basic
 Teerapat Kraisrisirikul
 */
 

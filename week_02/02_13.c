@@ -7,19 +7,14 @@ Teerapat Kraisrisirikul (60070183)
 
 int main() {
     /* Main function */
-    char num[6], newline = '\n';
+    char num[6];
     scanf("%s", num);
 
-    printf("%1.1s", num);
-    putchar(newline);
-    printf("%3.2s", num);
-    putchar(newline);
-    printf("%5.3s", num);
-    putchar(newline);
-    printf("%7.4s", num);
-    putchar(newline);
-    printf("%9.5s", num);
-    putchar(newline);
+    printf("%1.1s%79.0s", num, num);
+    printf("%3.2s%77.0s", num, num);
+    printf("%5.3s%75.0s", num, num);
+    printf("%7.4s%73.0s", num, num);
+    printf("%9.5s%71.0s", num, num);
 
     return 0;
 }
