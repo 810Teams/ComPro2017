@@ -8,10 +8,8 @@ Teerapat Kraisrisirikul
 int main() {
     /* Main function */
     int size_i, size_j;
-    printf("Column size: ");
-    scanf("%i", &size_i);
-    printf("Row size: ");
-    scanf("%i", &size_j);
+    printf("Column size: "); scanf("%i", &size_i);
+    printf("Row size: "); scanf("%i", &size_j);
 
     float matrix[size_i][size_j];
 
