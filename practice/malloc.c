@@ -1,5 +1,5 @@
 /*
-C Programming Practice - malloc()
+C Programming Practice - malloc
 Teerapat Kraisrisirikul
 */
 

@@ -10,11 +10,11 @@ int main() {
     char num[6];
     scanf("%s", num);
 
-    printf("%1.1s%79.0s", num, num);
-    printf("%3.2s%77.0s", num, num);
-    printf("%5.3s%75.0s", num, num);
-    printf("%7.4s%73.0s", num, num);
-    printf("%9.5s%71.0s", num, num);
+    printf("%1.1s%79.0s", num, "");
+    printf("%3.2s%77.0s", num, "");
+    printf("%5.3s%75.0s", num, "");
+    printf("%7.4s%73.0s", num, "");
+    printf("%9.5s%71.0s", num, "");
 
     return 0;
 }
