@@ -6,7 +6,7 @@ Teerapat Kraisrisirikul
 #include <stdio.h>
 #include <stdlib.h>
 
-float multiply(float **matrix_a, float **matrix_b, int q, int select_i, int select_j);
+double multiply(double **matrix_a, double **matrix_b, int q, int select_i, int select_j);
 
 int main() {
     /* Main function */
@@ -16,31 +16,29 @@ int main() {
     printf("q: "); scanf("%i", &q);
     printf("r: "); scanf("%i", &r);
 
-    float *matrix_a[p], *matrix_b[q], matrix_result[p][r];
+    double *matrix_a[p], *matrix_b[q], matrix_result[p][r];
 
     // Memory Allocation for pointer matrices
     for (int i = 0; i < p; i++) {
-        matrix_a[i] = (float*)malloc((q+1)*sizeof(float));
+        matrix_a[i] = (double*)malloc((q+1)*sizeof(double));
     }
     for (int i = 0; i < q; i++) {
-        matrix_b[i] = (float*)malloc((r+1)*sizeof(float));
+        matrix_b[i] = (double*)malloc((r+1)*sizeof(double));
     }
 
     // Input values for matrix_a
     printf("- Matrice A -\n");
     for (int i = 0; i < p; i++) {
-        printf("Row #%i: ", i);
         for (int j = 0; j < q; j++) {
-            scanf("%f", &matrix_a[i][j]);
+            scanf("%lf", &matrix_a[i][j]);
         }
     }
 
     // Input values for matrix_b
     printf("- Matrice B -\n");
     for (int i = 0; i < q; i++) {
-        printf("Row #%i: ", i);
         for (int j = 0; j < r; j++) {
-            scanf("%f", &matrix_b[i][j]);
+            scanf("%lf", &matrix_b[i][j]);
         }
     }
 
@@ -56,9 +54,9 @@ int main() {
     return 0;
 }
 
-float multiply(float **matrix_a, float **matrix_b, int q, int select_i, int select_j) {
+double multiply(double **matrix_a, double **matrix_b, int q, int select_i, int select_j) {
     /* Multiply matrice a's row with matrice b's column */
-    float result = 0;
+    double result = 0;
 
     // Calculate Result
     for (int i = 0; i < q; i++) {
