@@ -27,7 +27,7 @@ int main() {
     }
 
     // Input values for matrix_a
-    printf("- Matrice A -\n");
+    printf("Matrix A\n");
     for (int i = 0; i < p; i++) {
         for (int j = 0; j < q; j++) {
             scanf("%lf", &matrix_a[i][j]);
@@ -35,7 +35,7 @@ int main() {
     }
 
     // Input values for matrix_b
-    printf("- Matrice B -\n");
+    printf("Matrix B\n");
     for (int i = 0; i < q; i++) {
         for (int j = 0; j < r; j++) {
             scanf("%lf", &matrix_b[i][j]);

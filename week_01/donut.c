@@ -6,7 +6,8 @@ Teerapat Kraisrisirikul (60070183)
 #include <stdio.h>
 #define pi 3.14159
 
-float cal_area(int diameter), cal_circ(int diameter);
+float cal_area(int diameter);
+float cal_circ(int diameter);
 
 int main() {
     /* Main function */
