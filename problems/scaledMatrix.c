@@ -23,7 +23,6 @@ int main() {
 
     // Input values for matrix
     for (int i = 0; i < size_i; i++) {
-        printf("- Matrix Row #%i -\n", i);
         for (int j = 0; j < size_j; j++) {
             scanf(" %f", &matrix[i][j]);
         }

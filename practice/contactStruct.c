@@ -81,18 +81,18 @@ struct Contact editName(struct Contact data) {
 
 struct Contact editNickname(struct Contact data) {
     /* Function: Edit nickname */
-    printf("New Nickname: ");
     char new_nickname[11];
-    scanf("%s", new_nickname);
+    printf("New Nickname: ");
+    scanf(" %s", new_nickname);
     strcpy(data.nickname, new_nickname);
     return data;
 }
 
 struct Contact editTel(struct Contact data) {
     /* Function: Edit tel */
-    printf("New Tel: ");
     char new_tel[11];
-    scanf("%s", new_tel);
+    printf("New Tel: ");
+    scanf(" %s", new_tel);
     strcpy(data.tel, new_tel);
     return data;
 }

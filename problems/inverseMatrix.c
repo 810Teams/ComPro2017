@@ -74,7 +74,7 @@ double det(double **matrix, int size) {
 }
 
 double minor(double **matrix, int select_i, int select_j) {
-    /* Find Minor */
+    /* Find Minor (Only valid for 3*3 matrix) */
     // Memory Allocation
     double *matrix_small[2];
     for (int i = 0; i < 2; i++) {
@@ -103,6 +103,6 @@ double minor(double **matrix, int select_i, int select_j) {
 }
 
 double cofactor(double **matrix, int select_i, int select_j) {
-    /* Find Cofactor */
+    /* Find Cofactor (Only valid for 3*3 matrix) */
     return (minor(matrix, select_i, select_j) * pow(-1, select_i + select_j));
 }
