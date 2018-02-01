@@ -54,12 +54,12 @@ int main() {
     return 0;
 }
 
-double multiply(double **matrix_a, double **matrix_b, int q, int select_i, int select_j) {
+double multiply(double **matrix_a, double **matrix_b, int dimension, int select_i, int select_j) {
     /* Multiply matrice a's row with matrice b's column */
     double result = 0;
 
     // Calculate Result
-    for (int i = 0; i < q; i++) {
+    for (int i = 0; i < dimension; i++) {
         result += (matrix_a[select_i][i] * matrix_b[i][select_j]);
     }
 
