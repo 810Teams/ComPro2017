@@ -5,13 +5,13 @@ Teerapat Kraisrisirikul (60070183)
 
 #include <stdio.h>
 
-signed main() {
+int main() {
     /* Main function */
-    signed num;
+    int num;
     scanf("%i", &num);
 
-    for (signed i = 0; i < num; i++) {
-        for (signed j = 0; j < num; j++) {
+    for (int i = 0; i < num; i++) {
+        for (int j = 0; j < num; j++) {
             if (i == j || i+j == num-1) {
                 putchar('-');
                 continue;

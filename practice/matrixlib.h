@@ -14,7 +14,7 @@ void transpose(double **matrix, int size);
 void adj(double **matrix, int size);
 void inverse(double **matrix, int size);
 void multiply(double **matrix_result, double **matrix_a, double **matrix_b, int size_i, int size_ij, int size_j);
-double m(double **matrix_a, double **matrix_b, int select_i, int select_j, int size);
+double mul(double **matrix_a, double **matrix_b, int select_i, int select_j, int size);
 
 double det(double **matrix, int size) {
     /* Find Determinant */
@@ -137,12 +137,12 @@ void multiply(double **matrix_result, double **matrix_a, double **matrix_b, int 
     /* Full matrices multiply */
     for (int i = 0; i < size_i; i++) {
         for (int j = 0; j < size_j; j++) {
-            matrix_result[i][j] = m(matrix_a, matrix_b, i, j, size_ij);
+            matrix_result[i][j] = mul(matrix_a, matrix_b, i, j, size_ij);
         }
     }
 }
 
-double m(double **matrix_a, double **matrix_b, int select_i, int select_j, int size) {
+double mul(double **matrix_a, double **matrix_b, int select_i, int select_j, int size) {
     /* Multiply matrix a's row with matrice b's column */
     double result = 0;
 
