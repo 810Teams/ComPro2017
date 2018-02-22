@@ -19,25 +19,20 @@ double mul(double **matrix_a, double **matrix_b, int select_i, int select_j, int
 double det(double **matrix, int size) {
     /* Find Determinant */
     double result = 0;
-    if (size == 1) {
+    if (size == 1)
         result = matrix[0][0];
-    }
-    else if (size == 2) {
+    else if (size == 2)
         result = (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
-    }
-    else if (size == 3) {
+    else if (size == 3)
         result = (matrix[0][0] * matrix[1][1] * matrix[2][2]) +
                  (matrix[1][0] * matrix[2][1] * matrix[0][2]) +
                  (matrix[0][1] * matrix[1][2] * matrix[2][0]) -
                  (matrix[0][2] * matrix[1][1] * matrix[2][0]) -
                  (matrix[2][1] * matrix[1][2] * matrix[0][0]) -
                  (matrix[0][1] * matrix[1][0] * matrix[2][2]);
-    }
-    else {
-        for (int j = 0; j < size; j++) {
+    else
+        for (int j = 0; j < size; j++)
             result += matrix[0][j] * cofactor(matrix, 0, j, size);
-        }
-    }
 
     return result;
 }
@@ -45,9 +40,8 @@ double det(double **matrix, int size) {
 double minor(double **matrix, int select_i, int select_j, int size) {
     /* Find minor */
     double *matrix_small[size-1];
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
         matrix_small[i] = (double*)malloc((size)*sizeof(double));
-    }
 
     int i_small = 0, j_small = 0;
     for (int i = 0; i < size; i++) {
@@ -75,46 +69,36 @@ void transpose(double **matrix, int size) {
     /* Transpose the matrix */
     // Create temporary matrix
     double *temp[size];
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
         temp[i] = (double*)malloc((size+1)*sizeof(double));
-    }
 
     // Set values for temporary matrix
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
             temp[i][j] = matrix[i][j];
-        }
-    }
 
     // Set values for transposed matrix
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
             matrix[i][j] = temp[j][i];
-        }
-    }
 }
 
 void adj(double **matrix, int size) {
     /* Adjoint the matrix */
     // Create temporary matrix
     double *temp[size];
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
         temp[i] = (double*)malloc((size+1)*sizeof(double));
-    }
 
     // Set values for temporary matrix
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
             temp[i][j] = matrix[i][j];
-        }
-    }
 
     // Set values for adjoint matrix (unfinished)
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
             matrix[i][j] = cofactor(temp, i, j, size);
-        }
-    }
 
     // Transpose the adjoint matrix (final)
     transpose(matrix, size);
@@ -129,17 +113,17 @@ void inverse(double **matrix, int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             matrix[i][j] /= det_value;
+            if (matrix[i][j] == -0)
+                matrix[i][j] = 0;
         }
     }
 }
 
 void multiply(double **matrix_result, double **matrix_a, double **matrix_b, int size_i, int size_ij, int size_j) {
     /* Full matrices multiply */
-    for (int i = 0; i < size_i; i++) {
-        for (int j = 0; j < size_j; j++) {
+    for (int i = 0; i < size_i; i++)
+        for (int j = 0; j < size_j; j++)
             matrix_result[i][j] = mul(matrix_a, matrix_b, i, j, size_ij);
-        }
-    }
 }
 
 double mul(double **matrix_a, double **matrix_b, int select_i, int select_j, int size) {
@@ -147,9 +131,8 @@ double mul(double **matrix_a, double **matrix_b, int select_i, int select_j, int
     double result = 0;
 
     // Calculate Result
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
         result += (matrix_a[select_i][i] * matrix_b[i][select_j]);
-    }
 
     return result;
 }
