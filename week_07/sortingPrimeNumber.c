@@ -31,11 +31,13 @@ int main() {
     }
 
     // Sorting
-    for (int i = 0; i < 99; i++) {
-        for (int j = 99; j > 0; j--) {
+    for (int i = 1; i < 100; i++) {
+        for (int j = i; j > 0; j--) {
             if (primes[j] < primes[j-1]) {
                 swap(primes[j-1], primes[j]);
             }
+            else
+                break;
         }
     }
 
