@@ -1,5 +1,5 @@
 /*
-Computer Programming - Week 07
+Computer Programming - Pre-Midterm Week
 Teerapat Kraisrisirikul (60070183)
 */
 
@@ -28,9 +28,8 @@ int main() {
 int find_digits(int num) {
     /* Returns digits of input number */
     int digits = 0;
-    if (num == 0) {
+    if (num == 0)
         return 1;
-    }
     while (num != 0) {
         num /= 10;
         digits++;

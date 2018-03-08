@@ -1,5 +1,5 @@
 /*
-Computer Programming - Week 07
+Computer Programming - Pre-Midterm Week
 Teerapat Kraisrisirikul (60070183)
 */
 

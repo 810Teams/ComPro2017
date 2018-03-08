@@ -91,16 +91,14 @@ void scanIsland(int **island, int i, int j, int width, int length) {
 
 int min(int a, int b) {
     /* Compare and get minimum value */
-    if (a < b) {
+    if (a < b)
         return a;
-    }
     return b;
 }
 
 int max(int a, int b) {
     /* Compare and get maximum value */
-    if (a > b) {
+    if (a > b)
         return a;
-    }
     return b;
 }

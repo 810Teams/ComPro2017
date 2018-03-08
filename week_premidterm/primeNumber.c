@@ -1,5 +1,5 @@
 /*
-Computer Programming - Week 07
+Computer Programming - Pre-Midterm Week
 Teerapat Kraisrisirikul (60070183)
 */
 
@@ -21,7 +21,7 @@ int main() {
     }
 
     // Check for prime numbers
-    for (int i = a + 1 + 1 * (a % 2 == 1); i < b; i += 2) {
+    for (int i = a + 1 + (a % 2); i < b; i += 2) {
         if (is_prime(i)) {
             printf("%i ", i);
             primes++;
@@ -39,6 +39,11 @@ int main() {
 
 int is_prime(int num) {
     /* Check if 'num' is a prime number */
+    if (num < 2)
+        return 0;
+    else if (num == 2)
+        return 1;
+
     for (int i = 2; i < sqrt(num)+1; i++)
         if (num % i == 0)
             return 0;

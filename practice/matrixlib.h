@@ -65,21 +65,29 @@ double cofactor(double **matrix, int select_i, int select_j, int size) {
     return (pow((-1), select_i+select_j)*minor(matrix, select_i, select_j, size));
 }
 
-void transpose(double **matrix, int size) {
+void transpose(double **matrix, int size_i, int size_j) {
     /* Transpose the matrix */
     // Create temporary matrix
-    double *temp[size];
-    for (int i = 0; i < size; i++)
-        temp[i] = (double*)malloc((size+1)*sizeof(double));
+    double *temp[size_i];
+    for (int i = 0; i < size_i; i++)
+        temp[i] = (double*)malloc((size_j+1)*sizeof(double));
 
     // Set values for temporary matrix
-    for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
+    for (int i = 0; i < size_i; i++)
+        for (int j = 0; j < size_j; j++)
             temp[i][j] = matrix[i][j];
 
+    // Free Memory for the original matrix
+    for (int i = 0; i < size_i; i++)
+        free(matrix[i]);
+
+    // Memory Allocation for the original matrix (New size)
+    for (int i = 0; i < size_j; i++)
+        matrix[i] = (double*)malloc((size_i+1)*sizeof(double));
+
     // Set values for transposed matrix
-    for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
+    for (int i = 0; i < size_j; i++)
+        for (int j = 0; j < size_i; j++)
             matrix[i][j] = temp[j][i];
 }
 
