@@ -18,16 +18,13 @@ int main() {
     int count = 0;
 
     // Memory Allocation
-    for (int i = 0; i < width; i++) {
+    for (int i = 0; i < width; i++)
         island[i] = (int*)malloc((length+1)*sizeof(int));
-    }
 
     // Get island map
-    for (int i = 0; i < width; i++) {
-        for (int j = 0; j < length; j++) {
+    for (int i = 0; i < width; i++)
+        for (int j = 0; j < length; j++)
             scanf(" %i", &island[i][j]);
-        }
-    }
 
     // Scan island
     for (int i = 0; i < width; i++) {
