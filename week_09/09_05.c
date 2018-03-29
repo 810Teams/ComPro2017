@@ -10,31 +10,23 @@ Teerapat Kraisrisirikul (60070183)
 int main() {
     /* Main function */
     int chr = 0, word = 0, line = 0;
-    int length = 0;
     char text[512][512];
 
     // Input & Counting lines
     for (short i = 0; i < 512; i++) {
         scanf(" %[^\n]", text[i]);
-
         if (strcmp(text[i], ".") == 0)
             break;
-
         line++;
     }
 
     // Counting characters and words
     for (short i = 0; i < line; i++) {
         for (short j = 0; j < strlen(text[i])+1; j++) {
-            if (text[i][j] == ' ' || text[i][j] == '\0') {
+            if (text[i][j] == ' ' || text[i][j] == '\0')
                 word++;
-                length = 0;
-            }
-            else {
+            else
                 chr++;
-                length++;
-            }
-
             if (text[i][j] == '\0')
                 break;
         }
@@ -44,23 +36,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

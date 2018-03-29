@@ -8,24 +8,23 @@ Teerapat Kraisrisirikul (60070183)
 
 int main() {
     /* Main function */
-    int size;
+    short size;
     char text_a[64], text_b[64];
-    scanf("%i %[^\n] %[^\n]", &size, text_a, text_b);
+    scanf("%hi %[^\n] %[^\n]", &size, text_a, text_b);
 
     // Upper Border
     for (short i = 0; i < size; i++)
         putchar('*');
+    putchar('\n');
 
-    // Inside
-    printf("\n");
-    printf("*%*s%s%*s*\n", (size-2-strlen(text_a))/2+(strlen(text_a)%2 != size%2), "", text_a, (size-2-strlen(text_a))/2, "");
-    printf("*%*s%s%*s*\n", (size-2-strlen(text_b))/2+(strlen(text_b)%2 != size%2), "", text_b, (size-2-strlen(text_b))/2, "");
+    // Text
+    printf("*%*s%s%*s*\n", (size-2-strlen(text_a))/2 + (strlen(text_a)%2 != size%2), "", text_a, (size-2-strlen(text_a))/2, "");
+    printf("*%*s%s%*s*\n", (size-2-strlen(text_b))/2 + (strlen(text_b)%2 != size%2), "", text_b, (size-2-strlen(text_b))/2, "");
 
     // Lower Border
     for (short i = 0; i < size; i++)
         putchar('*');
-
-    printf("\n");
+    putchar('\n');
 
     return 0;
 }
