@@ -32,7 +32,7 @@ int main() {
             if (island[i][j] == 1) {
                 island[i][j] = 0;
                 scanIsland(island, i, j, width, length);
-                count += 1;
+                count++;
             }
         }
     }
